@@ -117,14 +117,14 @@ gsap.to(camera.position, {
   }
 });
 
+// Correct pad naar de afbeelding
 const textureLoader = new THREE.TextureLoader();
-const paintingTexture = textureLoader.load('public/painting.png');
+const paintingTexture = textureLoader.load('/painting.png'); // Gebruik het juiste pad
 const paintingMaterial = new THREE.MeshBasicMaterial({ map: paintingTexture });
 const paintingGeometry = new THREE.PlaneGeometry(3, 2);
 const painting = new THREE.Mesh(paintingGeometry, paintingMaterial);
 painting.position.set(0, 2, -4.9);
 scene.add(painting);
-
 
 const treeGeometry = new THREE.CylinderGeometry(0.3, 0.3, 5, 12);
 const leavesGeometry = new THREE.SphereGeometry(1.5, 16, 16);

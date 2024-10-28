@@ -117,12 +117,15 @@ gsap.to(camera.position, {
   }
 });
 
-// Correct pad naar de afbeelding
 const textureLoader = new THREE.TextureLoader();
-const paintingTexture = textureLoader.load('painting.jpg'); // Gebruik het juiste pad
-const paintingMaterial = new THREE.MeshBasicMaterial({ map: paintingTexture });
-const paintingGeometry = new THREE.PlaneGeometry(3, 2);
-const painting = new THREE.Mesh(paintingGeometry, paintingMaterial);
+const paintingTexture = textureLoader.load('painting.jpg');
+
+const paintingGeometry = new THREE.BoxGeometry( 2, 2, 0.02 );
+const paintingMaterial = new THREE.MeshStandardMaterial( { 
+  color: 0xffffff, 
+  map: paintingTexture,
+} );
+const painting = new THREE.Mesh( paintingGeometry, paintingMaterial );
 painting.position.set(0, 2, -4.9);
 scene.add(painting);
 

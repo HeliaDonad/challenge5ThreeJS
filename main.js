@@ -119,7 +119,7 @@ gsap.to(camera.position, {
 
 // Correct pad naar de afbeelding
 const textureLoader = new THREE.TextureLoader();
-const paintingTexture = textureLoader.load('/painting.png'); // Gebruik het juiste pad
+const paintingTexture = textureLoader.load('painting.jpg'); // Gebruik het juiste pad
 const paintingMaterial = new THREE.MeshBasicMaterial({ map: paintingTexture });
 const paintingGeometry = new THREE.PlaneGeometry(3, 2);
 const painting = new THREE.Mesh(paintingGeometry, paintingMaterial);
